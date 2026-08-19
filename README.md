@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Ouvre le lien affiché (en général http://localhost:5173).
+Ouvre le lien affiché (en général <http://localhost:5173>).
 
 ## Build de production
 
@@ -28,7 +28,7 @@ Génère le site statique dans `dist/`.
 
 ## Structure du projet
 
-```
+```sh
 ├── index.html              → page d'accueil / notice d'utilisation
 ├── taches.html              → liste des tâches enregistrées (localStorage)
 ├── arbre.html                → questionnaire / arbre de décision
@@ -54,6 +54,7 @@ Ce fichier peut être édité directement dans GitHub (mode tableau) ou dans
 Excel/Google Sheets puis ré-exporté en CSV.
 
 Colonnes :
+
 - `id` : identifiant unique de la case (ne pas dupliquer)
 - `type` : `question` (avec des boutons) ou `resultat` (fin de parcours)
 - `texte` : texte affiché
@@ -85,10 +86,12 @@ Les couleurs de la charte sont définies en variables CSS dans
 2. `npm run build` (génère `dist/`).
 3. Déployer le contenu de `dist/` sur la branche `gh-pages`, par exemple avec
    [`gh-pages`](https://www.npmjs.com/package/gh-pages) :
+
    ```bash
    npm install --save-dev gh-pages
    npx gh-pages -d dist
    ```
+
 4. Dans les paramètres du repo GitHub → Pages, sélectionner la branche
    `gh-pages` comme source.
 
