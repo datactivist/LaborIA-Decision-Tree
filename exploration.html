@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorer - LaborIA</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/LaborIA_cerveau_transparent.svg" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+    <nav>
+      <a href="/index.html">Accueil</a>
+      <a href="/taches.html">Mes tâches</a>
+      <a href="/exploration.html">Explorer</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Explorer les résultats</div>
+
+    <div class="columns">
+      <!-- Colonne IA utile -->
+      <div class="card card-white">
+        <div class="column-title">Tâches pour lesquelles l'IA est utile sans que j'aie besoin de refaire beaucoup de travail de reprise des résultats</div>
+        <ul class="task-list" id="liste-utile"></ul>
+
+        <hr />
+        <h3>Comment améliorer encore ce processus ?</h3>
+        <ul>
+          <li>Fournir des ressources pour l'auto-formation</li>
+          <li>Suggérer une formation par l'entreprise</li>
+          <li>Se questionner si c'est le bon outil</li>
+        </ul>
+      </div>
+
+      <!-- Colonne IA insatisfaisante -->
+      <div class="card card-orange-tint">
+        <div class="column-title">Tâches pour lesquelles l'IA ne donne pas satisfaction</div>
+        <ul class="task-list" id="liste-insatisfaisante"></ul>
+
+        <hr />
+        <h3>Quelques questions à se poser</h3>
+        <ul>
+          <li>Est-ce que l'IA est vraiment utile pour cette tâche ?</li>
+          <li>Par quoi la remplacer ? (autre outil, autre processus, autre organisation)</li>
+        </ul>
+
+        <h3>Des outils alternatifs à explorer</h3>
+        <ul class="tool-list">
+          <li><strong>Correcteur</strong> : LanguageTool</li>
+          <li><strong>Traducteur</strong> : DeepL</li>
+          <li><strong>Graphisme</strong> : Canva</li>
+          <li><strong>Résumés, cartes mentales, recherche documentaire</strong> : NotebookLM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-outline" href="/taches.html">&larr; Retour à mes tâches</a>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/exploration.js"></script>
+</body>
+</html>

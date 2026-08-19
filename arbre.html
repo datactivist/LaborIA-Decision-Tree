@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arbre de décision - LaborIA</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/LaborIA_cerveau_transparent.svg" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+    <nav>
+      <a href="/index.html">Accueil</a>
+      <a href="/taches.html">Mes tâches</a>
+      <a href="/exploration.html">Explorer</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner" id="titre-tache">Arbre de décision</div>
+
+    <div class="card card-white">
+      <button id="btn-retour" class="tree-back" style="display:none;">&larr; Question précédente</button>
+      <div id="contenu-arbre">Chargement…</div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/arbre.js"></script>
+</body>
+</html>

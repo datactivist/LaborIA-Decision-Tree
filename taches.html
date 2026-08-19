@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes tâches - LaborIA</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/LaborIA_cerveau_transparent.svg" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+    <nav>
+      <a href="/index.html">Accueil</a>
+      <a href="/taches.html">Mes tâches</a>
+      <a href="/exploration.html">Explorer</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Mes tâches</div>
+
+    <div class="btn-row">
+      <button id="btn-ajouter" class="btn btn-primary">+ Ajouter une tâche</button>
+      <a class="btn btn-outline" href="/exploration.html">Explorer les résultats &rarr;</a>
+    </div>
+
+    <div id="form-ajout" class="card card-white" style="display:none; margin-top:20px;">
+      <div class="form-row">
+        <label for="input-nom">Nom de la tâche</label>
+        <input type="text" id="input-nom" placeholder="Ex : rédiger un compte rendu de réunion" />
+      </div>
+      <div class="btn-row">
+        <button id="btn-lancer" class="btn btn-primary">Lancer l'arbre de décision</button>
+        <button id="btn-annuler" class="btn btn-secondary">Annuler</button>
+      </div>
+    </div>
+
+    <div id="liste-taches" class="card card-white" style="margin-top:20px;"></div>
+  </div>
+
+  <script type="module" src="/src/js/taches.js"></script>
+</body>
+</html>
