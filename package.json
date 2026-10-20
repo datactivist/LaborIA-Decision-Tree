@@ -12,8 +12,8 @@
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "vite": "^5.4.0"
+    "gh-pages": "^6.1.1",
+    "vite": "^8.3.4"
   },
   "allowScripts": {
     "esbuild@0.21.5": true
