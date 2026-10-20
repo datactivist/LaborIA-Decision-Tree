@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partie 3 - Autoportrait - LaborIA</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/cropped-favicon-32x32.png" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+</head>
+<body>
+  <header class="site-header no-print">
+    <div class="brand">
+      <a href="../../index.html" aria-label="Retour a l'accueil">
+        <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+      </a>
+      <span class="nav-tool">Autoportrait : l'IA dans mon quotidien</span>
+    </div>
+    <nav>
+      <a href="../../index.html">Tous les outils</a>
+      <a href="index.html">Notice</a>
+      <a href="partie-1.html">Partie 1</a>
+      <a href="partie-2.html">Partie 2</a>
+      <a href="partie-3.html">Partie 3</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Partie 3 - Faire le bilan</div>
+    <p class="mode no-print"><span class="badge badge-offline">Mode déconnecté</span></p>
+
+    <div class="card card-orange-tint no-print">
+      <p>
+        Relisez l'ensemble des parties 1 et 2 (récapitulatif en bas de page), puis répondez aux 3
+        questions suivantes. Nous vous recommandons de refaire ce bilan chaque année, comme un
+        « checkup » annuel.
+      </p>
+    </div>
+
+    <div id="partie3-app"></div>
+
+    <h2>Récapitulatif de mon autoportrait</h2>
+    <div id="recap" class="card card-white"></div>
+
+    <div class="card card-white no-print">
+      <h2>Mes résultats</h2>
+      <p>Vos résultats ne sont pas partagés : ils sont enregistrés dans ce navigateur uniquement.</p>
+      <div class="btn-row">
+        <button id="btn-print" class="btn btn-primary">Imprimer / enregistrer en PDF</button>
+        <button id="btn-txt" class="btn btn-secondary">Télécharger en .txt</button>
+        <button id="btn-export" class="btn btn-secondary">Exporter une sauvegarde</button>
+        <button id="btn-import" class="btn btn-secondary">Importer une sauvegarde</button>
+        <button id="btn-reset" class="btn btn-outline">Tout effacer</button>
+        <input id="file-import" type="file" accept="application/json,.json" hidden />
+      </div>
+    </div>
+
+    <div class="btn-row no-print">
+      <a class="btn btn-outline" href="partie-2.html">&larr; Partie 2</a>
+      <a class="btn btn-secondary" href="ressources.html">Ressources pour aller plus loin &rarr;</a>
+    </div>
+  </div>
+
+  <script type="module" src="../../src/js/autoportrait/partie3.js"></script>
+</body>
+</html>

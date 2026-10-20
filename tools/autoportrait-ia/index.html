@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autoportrait : l'IA dans mon quotidien - LaborIA</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/cropped-favicon-32x32.png" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="../../index.html" aria-label="Retour a l'accueil">
+        <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+      </a>
+      <span class="nav-tool">Autoportrait : l'IA dans mon quotidien</span>
+    </div>
+    <nav>
+      <a href="../../index.html">Tous les outils</a>
+      <a href="index.html">Notice</a>
+      <a href="partie-1.html">Partie 1</a>
+      <a href="partie-2.html">Partie 2</a>
+      <a href="partie-3.html">Partie 3</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Autoportrait : l'IA dans mon quotidien</div>
+
+    <div class="card card-white">
+      <h2>À quoi sert cet outil ?</h2>
+      <p>
+        « J'utilise l'IA dans mon quotidien, mais je n'arrive pas à me rendre compte de ce que je lui
+        demande le plus, ni si je gagne en autonomie. » Cet outil d'autodiagnostic vous aide à faire le
+        bilan de votre usage de l'IA générative dans votre travail au quotidien.
+      </p>
+      <p>
+        Il s'adresse à des individus (plutôt qu'à des organisations) qui utilisent déjà l'IA, de manière
+        régulière ou non, et se posent des questions sur leur usage : dirigeants, représentants du
+        personnel ou de syndicats, salariés.
+      </p>
+      <ul>
+        <li><strong>Format :</strong> autodiagnostic</li>
+        <li><strong>Temps :</strong> individuel</li>
+        <li><strong>Public :</strong> toute personne qui utilise de l'IA générative</li>
+        <li><strong>Durée :</strong> environ 30 à 45 minutes</li>
+      </ul>
+    </div>
+
+    <div class="card card-white">
+      <h2>Déroulé de l'autodiagnostic</h2>
+      <p>
+        L'activité est composée de 3 parties distinctes, volontairement conçues avec un mode
+        « connecté » puis un mode « déconnecté ».
+      </p>
+      <ol>
+        <li><strong>Lisez la notice</strong> (cette page).</li>
+        <li>
+          <strong>Suivez les parties 1, 2 et 3 dans l'ordre</strong>, en répondant aux questions posées :
+          <ul>
+            <li><a href="partie-1.html">Partie 1 - Mon utilisation de l'IA</a> (mode connecté)</li>
+            <li><a href="partie-2.html">Partie 2 - Ce que l'IA fait à mon travail</a> (mode déconnecté)</li>
+            <li><a href="partie-3.html">Partie 3 - Faire le bilan</a> (mode déconnecté)</li>
+          </ul>
+        </li>
+        <li><strong>Tirez votre bilan</strong> de votre utilisation de l'IA générative.</li>
+      </ol>
+      <p>
+        Nous recommandons de refaire ce bilan personnel tous les ans, comme un « checkup » annuel, pour
+        voir comment vos usages évoluent.
+      </p>
+    </div>
+
+    <div class="card card-orange-tint">
+      <h2>Vos résultats restent chez vous</h2>
+      <p>
+        <strong>Les résultats de ce bilan sont personnels et ne sont partagés avec personne.</strong>
+        Ils sont enregistrés uniquement dans votre navigateur, sur votre ordinateur, et ne sont envoyés
+        nulle part. Vous pouvez les exporter dans la <a href="partie-3.html">partie 3</a> pour les
+        conserver.
+      </p>
+      <h3>Que faire de mes résultats ?</h3>
+      <p>
+        Vous pouvez les conserver pour vous, avoir envie d'en discuter avec les représentants du
+        personnel ou des partenaires sociaux de votre entreprise, ou échanger avec d'autres personnes de
+        votre structure. Vous décidez de ce que vous partagez ou non, et à quel degré (tout, en partie,
+        rien). Ce bilan peut aussi alimenter votre participation à une discussion collective, comme celle
+        proposée par l'outil « IA : il faut qu'on parle ».
+      </p>
+    </div>
+
+    <div class="card card-white">
+      <h2>Vous avez déjà une sauvegarde ?</h2>
+      <p>
+        Si vous avez exporté un précédent autoportrait (par exemple lors d'un bilan annuel) ou
+        que vous changez d'ordinateur ou de navigateur, importez votre fichier de sauvegarde pour
+        retrouver vos réponses. Cela remplace les données actuellement enregistrées dans ce navigateur.
+      </p>
+      <div class="btn-row">
+        <button type="button" id="btn-import" class="btn btn-secondary">Importer une sauvegarde</button>
+        <input id="file-import" type="file" accept="application/json,.json" hidden />
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="partie-1.html">Commencer &rarr;</a>
+    </div>
+
+    <p class="credit">
+      Cet outil a été produit par Simon Chignard et Datactivist dans le cadre de travaux du LaborIA - mai 2026.
+      Contact : <a href="mailto:laboria@inria.fr">laboria@inria.fr</a>
+    </p>
+  </div>
+
+  <script type="module" src="../../src/js/autoportrait/notice.js"></script>
+</body>
+</html>

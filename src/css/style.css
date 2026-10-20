@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Mulish:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap");
+
 /* ==========================================================================
    Charte graphique LaborIA
    ========================================================================== */
@@ -19,8 +21,19 @@
   --color-orange-3: #FDD9AD;
   --color-orange-4: #FEECD6;
 
-  --radius: 10px;
-  --shadow: 0 2px 8px rgba(12, 58, 68, 0.12);
+  /* Charte du site laboria.ai */
+  --primary: #f99f33;
+  --primary-mid: #fde2c2;
+  --primary-light: #fff5e9;
+  --primary-dark: #f18605;
+  --secondary: #0c3a44;
+  --secondary-mid: #def0f2;
+  --secondary-light: #ecf6f8;
+  --border-light: #e7eff2;
+
+  --radius: 4px;
+  --shadow: 0 4px 16px rgba(12, 58, 68, 0.1);
+  --header-height: 72px;
 }
 
 * {
@@ -29,74 +42,135 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: var(--color-dark);
+  font-family: "Mulish", Arial, sans-serif;
+  font-size: 16px;
+  color: var(--secondary);
   background: var(--color-white);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--secondary);
+}
+
+h2 {
+  font-size: 1.9rem;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--primary-dark);
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px 60px;
+  padding: 0 24px 80px;
 }
 
 /* ---------- Header ---------- */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  border-bottom: 2px solid var(--color-blue-4);
+  min-height: var(--header-height);
+  gap: 8px 24px;
+  padding: 8px 40px;
+  background: var(--primary-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .site-header img.logo {
-  height: 36px;
+  height: 40px;
 }
 
 .site-header nav a {
-  margin-left: 20px;
-  color: var(--color-dark);
+  margin-left: 22px;
+  color: var(--secondary);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
 }
 
 .site-header nav a:hover {
-  color: var(--color-orange);
+  color: var(--secondary);
+  border-bottom-color: var(--primary);
 }
 
-/* ---------- Bandeau titre ---------- */
+.site-header nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-tool {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--primary);
+  color: var(--secondary);
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+/* ---------- Titre de page ---------- */
 .page-banner {
-  background: var(--color-orange);
-  color: var(--color-white);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.4rem;
-  padding: 18px 24px;
-  border-radius: var(--radius);
-  margin: 24px 0;
+  color: var(--secondary);
+  font-weight: 900;
+  font-size: 2.6rem;
+  line-height: 1.17;
+  padding: 48px 0 8px;
+  margin: 0 0 24px;
+}
+
+.page-banner::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 5px;
+  margin-top: 16px;
+  background: var(--primary);
 }
 
 /* ---------- Cartes / blocs ---------- */
 .card {
-  background: var(--color-blue-4);
+  background: var(--secondary-mid);
   border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
 }
 
 .card.card-white {
   background: var(--color-white);
-  border: 2px solid var(--color-blue-4);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
 }
 
 .card.card-orange-tint {
-  background: var(--color-orange-4);
+  background: var(--primary-light);
 }
 
 .card h2, .card h3 {
   margin-top: 0;
+}
+
+.card h3 {
+  font-size: 1.25rem;
 }
 
 /* ---------- Étape badge ---------- */
@@ -118,38 +192,54 @@ body {
 
 /* ---------- Boutons ---------- */
 .btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 25px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
+  transition: all 0.1s linear;
 }
 
 .btn-primary {
-  background: var(--color-orange);
+  background: var(--primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
   color: var(--color-white);
 }
 
 .btn-secondary {
   background: var(--color-white);
-  color: var(--color-dark);
-  border: 2px solid var(--color-dark);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--color-white);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--color-dark);
-  border: 2px solid var(--color-blue-3);
+  background: var(--color-white);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-outline:hover {
+  background: var(--secondary-light);
+  color: var(--secondary);
 }
 
 .btn-block {
@@ -341,4 +431,274 @@ body {
   border: 2px solid var(--color-blue-3);
   border-radius: 8px;
   font-size: 1rem;
+}
+
+/* ---------- Accueil : grille d'outils ---------- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-top: 5px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+}
+
+.tool-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.tool-card p {
+  flex: 1;
+  margin: 0;
+}
+
+.tool-card-soon {
+  border-top-color: var(--secondary-mid);
+  background: var(--secondary-light);
+}
+
+/* ---------- Accueil : hero ---------- */
+.hero {
+  background: var(--primary-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0 0 20px;
+  font-size: 2.9rem;
+  line-height: 1.17;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.hero-eyebrow {
+  margin: 0 0 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+
+.notice {
+  max-width: 680px;
+  margin: 24px 0 8px;
+  padding: 16px 20px;
+  background: var(--color-white);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+}
+
+.section {
+  padding-top: 64px;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .hero h1,
+  .page-banner {
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Outil "Autoportrait : l'IA dans mon quotidien" ---------- */
+.mode {
+  margin: -8px 0 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.badge-connected { background: var(--secondary); color: var(--color-white); }
+.badge-offline { background: var(--primary-mid); color: var(--secondary); }
+.badge-oui { background: var(--primary); color: var(--color-white); }
+.badge-moitie { background: var(--primary-mid); color: var(--secondary); }
+.badge-non { background: var(--secondary-mid); color: var(--secondary); }
+
+.prompt-box {
+  margin: 12px 0;
+  padding: 16px 20px;
+  background: var(--secondary-light);
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.duree-row input {
+  width: 100px;
+}
+
+.note {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: var(--color-white);
+  color: inherit;
+  font: inherit;
+}
+
+.note:focus,
+.form-row input:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+.note-big {
+  min-height: 80px;
+}
+
+textarea.note:not(.note-big) {
+  resize: none;
+  overflow: hidden;
+}
+
+.form-row input[type="number"] {
+  padding: 8px 12px;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.statement {
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.statement:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.statement legend {
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.choice:has(input:checked) {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--color-white);
+}
+
+.choice input {
+  accent-color: var(--secondary);
+}
+
+.muted {
+  color: var(--color-blue-1);
+  font-size: 0.95rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+@media (max-width: 700px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-row input.note,
+.form-row textarea.note {
+  width: 100%;
+}
+
+.pre {
+  white-space: pre-wrap;
+}
+
+.recap-block + .recap-block {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.credit {
+  margin-top: 32px;
+  font-size: 0.9rem;
+  color: var(--color-blue-1);
+}
+
+@media print {
+  .no-print,
+  .site-header {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
 }

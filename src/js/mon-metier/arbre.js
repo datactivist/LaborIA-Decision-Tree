@@ -1,7 +1,7 @@
 import { loadTree } from './csv.js';
 import { getTask, updateTask, addStepToTask } from './storage.js';
 
-const CSV_PATH = '/data/arbre_decision.csv';
+const CSV_PATH = import.meta.env.BASE_URL + 'data/arbre_decision.csv';
 const START_NODE = 'q1';
 
 const contenuEl = document.getElementById('contenu-arbre');
@@ -87,7 +87,7 @@ function renderResultat(node) {
       <div class="tree-result-box">
         <p>${escapeHtml(node.texte)}</p>
         <div class="btn-row" style="justify-content:center;">
-          <a class="btn btn-primary" href="/taches.html">Retour à mes tâches</a>
+          <a class="btn btn-primary" href="taches.html">Retour à mes tâches</a>
         </div>
       </div>
     `;
@@ -117,7 +117,7 @@ function renderResultat(node) {
   contenuEl.querySelectorAll('[data-statut]').forEach((btn) => {
     btn.addEventListener('click', () => {
       updateTask(task.id, { statut: btn.dataset.statut });
-      window.location.href = '/taches.html';
+      window.location.href = 'taches.html';
     });
   });
 }

@@ -31,7 +31,7 @@ btnLancer.addEventListener('click', () => {
     return;
   }
   const task = createTask(nom);
-  window.location.href = `/arbre.html?task=${task.id}`;
+  window.location.href = `arbre.html?task=${task.id}`;
 });
 
 inputNom.addEventListener('keydown', (e) => {
@@ -57,7 +57,7 @@ function render() {
 
   listeTachesEl.querySelectorAll('[data-action="reprendre"]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      window.location.href = `/arbre.html?task=${btn.dataset.id}`;
+      window.location.href = `arbre.html?task=${btn.dataset.id}`;
     });
   });
 

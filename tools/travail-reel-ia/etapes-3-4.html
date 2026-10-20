@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Étapes 3 et 4 - Le travail réel de l'IA - LaborIA</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/cropped-favicon-32x32.png" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+</head>
+<body>
+  <header class="site-header no-print">
+    <div class="brand">
+      <a href="../../index.html" aria-label="Retour a l'accueil">
+        <img class="logo" src="/assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+      </a>
+      <span class="nav-tool">Le travail réel de l'IA</span>
+    </div>
+    <nav>
+      <a href="../../index.html">Tous les outils</a>
+      <a href="index.html">Notice</a>
+      <a href="etapes-1-2.html">Étapes 1 et 2</a>
+      <a href="etapes-3-4.html">Étapes 3 et 4</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Étapes 3 et 4 - Prendre du recul</div>
+
+    <div class="card card-orange-tint no-print">
+      <p>
+        <strong>Étape 3 :</strong> posez-vous ces questions par rapport aux tâches et sous-tâches que
+        vous avez décrites.
+      </p>
+    </div>
+
+    <div id="etape3-app" class="no-print"></div>
+
+    <div class="card card-white no-print">
+      <h2>Étape 4 : ce qui n'est pas valorisé</h2>
+      <p>
+        Toujours dans le jeu de rôle, imaginez que vous racontez à votre meilleur·e ami·e ce qui n'est
+        pas valorisé dans votre travail, ce qui n'est pas pris en compte dans votre fiche de poste.
+      </p>
+      <textarea id="etape4-field" class="note note-big" rows="4" aria-label="Ce qui n'est pas valorisé dans mon travail"></textarea>
+    </div>
+
+    <h2>Récapitulatif de mon travail réel</h2>
+    <div id="recap" class="card card-white"></div>
+
+    <div class="card card-white no-print">
+      <h2>Mes résultats</h2>
+      <p>Vos résultats ne sont pas partagés : ils sont enregistrés dans ce navigateur uniquement.</p>
+      <div class="btn-row">
+        <button id="btn-refresh" class="btn btn-outline">Actualiser le récapitulatif</button>
+        <button id="btn-print" class="btn btn-primary">Imprimer / enregistrer en PDF</button>
+        <button id="btn-txt" class="btn btn-secondary">Télécharger en .txt</button>
+        <button id="btn-export" class="btn btn-secondary">Exporter une sauvegarde</button>
+        <button id="btn-import" class="btn btn-secondary">Importer une sauvegarde</button>
+        <button id="btn-reset" class="btn btn-outline">Tout effacer</button>
+        <input id="file-import" type="file" accept="application/json,.json" hidden />
+      </div>
+    </div>
+
+    <div class="btn-row no-print">
+      <a class="btn btn-outline" href="etapes-1-2.html">&larr; Étapes 1 et 2</a>
+      <a class="btn btn-secondary" href="ressources.html">Ressources pour aller plus loin &rarr;</a>
+    </div>
+  </div>
+
+  <script type="module" src="../../src/js/travail-reel/reflexion.js"></script>
+</body>
+</html>
