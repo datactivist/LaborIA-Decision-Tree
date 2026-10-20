@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partie 1 - Autoportrait - LaborIA</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo/cropped-favicon-32x32.png" />
+  <script type="module" crossorigin src="../../assets/autoportraitPartie1-OE4INqH7.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="../../assets/storage-1QKQVCXX.js">
+  <link rel="modulepreload" crossorigin href="../../assets/content-DTGBqmGv.js">
+  <link rel="stylesheet" crossorigin href="../../assets/style-Cz9EWVqh.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="../../index.html" aria-label="Retour a l'accueil">
+        <img class="logo" src="../../assets/logo/LaborIA_transparent.svg" alt="LaborIA" />
+      </a>
+      <span class="nav-tool">Autoportrait : l'IA dans mon quotidien</span>
+    </div>
+    <nav>
+      <a href="../../index.html">Tous les outils</a>
+      <a href="index.html">Notice</a>
+      <a href="partie-1.html">Partie 1</a>
+      <a href="partie-2.html">Partie 2</a>
+      <a href="partie-3.html">Partie 3</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-banner">Partie 1 - Mon utilisation de l'IA</div>
+    <p class="mode"><span class="badge badge-connected">Mode connecté</span></p>
+
+    <div class="notice">
+      <p>
+        <strong>À savoir avant de commencer :</strong> cette partie ne fonctionne que si
+        l'utilisation de l'historique des conversations est activée dans votre outil d'IA (par
+        exemple la « mémoire » ou la référence aux conversations passées). Sans cela, l'IA ne
+        pourra pas analyser vos usages et sa réponse sera vide ou inexacte. L'activation n'est 
+        souvent pas rétroactive : même après l'avoir activée, l'IA ne pourra pas analyser vos conversations passées.
+        Passez directement à la <a href="partie-2.html">partie 2</a> si nécessaire.
+      </p>
+    </div>
+
+    <div class="card card-white">
+      <h2>1. Interrogez votre outil d'IA habituel</h2>
+      <p>
+        Dans votre outil d'IA habituel, rédigez le prompt suivant. Choisissez d'abord la durée sur
+        laquelle vous lui demandez de travailler :
+      </p>
+      <div class="form-row duree-row">
+        <label for="input-duree">Historique des conversations, en mois</label>
+        <input type="number" id="input-duree" min="1" max="60" step="1" />
+      </div>
+      <pre id="prompt-text" class="prompt-box"></pre>
+      <div class="btn-row">
+        <button id="btn-copy" class="btn btn-primary">Copier le prompt</button>
+      </div>
+      <p class="muted">
+        Collez ensuite la réponse de l'IA ci-dessous si vous souhaitez la conserver (facultatif). Elle
+        reste dans votre navigateur.
+      </p>
+      <div class="form-row">
+        <label for="reponse-ia">Réponse de l'IA (facultatif)</label>
+        <textarea id="reponse-ia" class="note note-big" rows="5" data-field="p1.reponseIA"></textarea>
+      </div>
+    </div>
+
+    <div class="card card-white">
+      <h2>2. Prenez 10 minutes pour réfléchir aux réponses de l'IA</h2>
+      <div class="form-row">
+        <label for="conforte">Qu'est-ce qui conforte ce que je savais déjà ?</label>
+        <textarea id="conforte" class="note note-big" rows="3" data-field="p1.conforte"></textarea>
+      </div>
+      <div class="form-row">
+        <label for="surprend">Qu'est-ce qui me surprend ?</label>
+        <textarea id="surprend" class="note note-big" rows="3" data-field="p1.surprend"></textarea>
+      </div>
+      <div class="form-row">
+        <label for="desaccord">Est-ce qu'il y a des éléments avec lesquels je suis en désaccord ?</label>
+        <textarea id="desaccord" class="note note-big" rows="3" data-field="p1.desaccord"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-outline" href="index.html">&larr; Notice</a>
+      <a class="btn btn-primary" href="partie-2.html">Partie 2 &rarr;</a>
+    </div>
+  </div>
+
+</body>
+</html>
