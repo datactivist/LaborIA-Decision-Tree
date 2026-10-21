@@ -675,6 +675,185 @@ textarea.note:not(.note-big) {
   width: 100%;
 }
 
+.illustrated-intro {
+  margin-bottom: 32px;
+}
+
+.illustrated-story {
+  padding: 28px;
+  background: var(--secondary-light);
+  border-radius: var(--radius);
+}
+
+.story-chat h2,
+.illustrated-steps h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.story-chat {
+  display: grid;
+  gap: 12px;
+}
+
+.chat-line {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  max-width: 900px;
+}
+
+.chat-line img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.chat-line-right {
+  grid-template-columns: minmax(0, 1fr) 88px;
+  justify-self: end;
+}
+
+.chat-line-right .story-line {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.chat-line-right img {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.story-line {
+  margin: 0;
+  padding: 14px 18px;
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px 16px 16px 4px;
+}
+
+.chat-line-right .story-line {
+  background: var(--primary-light);
+  border-color: var(--primary-mid);
+  border-radius: 16px 16px 4px 16px;
+}
+
+.story-line-answer {
+  font-weight: 800;
+}
+
+.illustrated-steps {
+  margin-top: 28px;
+}
+
+.illustrated-step-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.illustrated-step-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-content: start;
+  align-items: center;
+  gap: 8px 14px;
+  min-height: 150px;
+  padding: 22px 18px;
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.illustrated-step-list img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.illustrated-step-list h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.illustrated-step-list p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.illustrated-step-number {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--primary-dark);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .site-header nav {
+    width: 100%;
+    gap: 4px 16px;
+  }
+
+  .site-header nav a {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+
+  .nav-tool {
+    margin-left: 12px;
+    padding-left: 12px;
+    font-size: 1rem;
+  }
+
+  .illustrated-story {
+    padding: 20px;
+  }
+
+  .chat-line,
+  .chat-line-right {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .chat-line-right {
+    grid-template-columns: minmax(0, 1fr) 56px;
+  }
+
+  .chat-line img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .story-line {
+    padding: 12px;
+  }
+
+  .illustrated-step-list {
+    grid-template-columns: 1fr;
+  }
+
+  .illustrated-step-list li {
+    min-height: 0;
+  }
+}
+
 .pre {
   white-space: pre-wrap;
 }
