@@ -82,18 +82,27 @@ Les couleurs de la charte sont définies en variables CSS dans
 
 ## Publier sur GitHub Pages
 
-1. Pousser le repo sur GitHub.
-2. `npm run build` (génère `dist/`).
-3. Déployer le contenu de `dist/` sur la branche `gh-pages`, par exemple avec
-   [`gh-pages`](https://www.npmjs.com/package/gh-pages) :
+1. Vérifier que GitHub Pages est configuré dans **Settings → Pages** avec
+   **Deploy from a branch**, branche `gh-pages` et dossier `/(root)`.
+2. Pousser les changements sur GitHub.
+3. Depuis la racine du projet, lancer :
 
    ```bash
-   npm install --save-dev gh-pages
-   npx gh-pages -d dist
+   npm run deploy
    ```
 
-4. Dans les paramètres du repo GitHub → Pages, sélectionner la branche
-   `gh-pages` comme source.
+   Cette commande construit le site dans `dist/`, puis publie ce dossier sur
+   `gh-pages`. Chaque publication remplace le contenu de cette branche par le
+   nouveau contenu de `dist/`.
+4. Dans **Settings → Pages**, consulter l'état du dernier déploiement. Le site
+   est publié automatiquement après la mise à jour de `gh-pages` ; aucun workflow
+   GitHub Actions supplémentaire n'est requis avec cette source.
 
-Le `base: './'` dans `vite.config.js` garantit que les chemins fonctionnent
-aussi bien sur `username.github.io/` que sur `username.github.io/nom-du-repo/`.
+Le domaine personnalisé `laboria.datactivist.coop` est conservé par le fichier
+`public/CNAME`, que Vite copie à la racine de `dist/` à chaque build. Ne placez
+pas le seul fichier `CNAME` à la racine du dépôt : il ne serait pas inclus dans
+la publication de `dist/`.
+
+Le `base: './'` dans `vite.config.js` permet aux chemins des ressources de
+fonctionner à la racine du domaine personnalisé comme dans un sous-dossier de
+projet.
