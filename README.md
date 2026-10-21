@@ -82,21 +82,15 @@ Les couleurs de la charte sont définies en variables CSS dans
 
 ## Publier sur GitHub Pages
 
-1. Vérifier que GitHub Pages est configuré dans **Settings → Pages** avec
-   **Deploy from a branch**, branche `gh-pages` et dossier `/(root)`.
-2. Pousser les changements sur GitHub.
-3. Depuis la racine du projet, lancer :
+Le déploiement est automatique via `.github/workflows/deploy.yml` : chaque push
+sur `main` construit le site (`npm run build`) et le publie.
 
-   ```bash
-   npm run deploy
-   ```
+1. Dans **Settings → Pages**, choisir **Source : GitHub Actions** (une seule fois).
+2. Pousser sur `main`. Le suivi se fait dans l'onglet **Actions**. Le workflow
+   peut aussi être lancé à la main (**Run workflow**).
 
-   Cette commande construit le site dans `dist/`, puis publie ce dossier sur
-   `gh-pages`. Chaque publication remplace le contenu de cette branche par le
-   nouveau contenu de `dist/`.
-4. Dans **Settings → Pages**, consulter l'état du dernier déploiement. Le site
-   est publié automatiquement après la mise à jour de `gh-pages` ; aucun workflow
-   GitHub Actions supplémentaire n'est requis avec cette source.
+Alternative manuelle (source « Deploy from a branch », branche `gh-pages`) :
+`npm run deploy`.
 
 Le domaine personnalisé `laboria.datactivist.coop` est conservé par le fichier
 `public/CNAME`, que Vite copie à la racine de `dist/` à chaque build. Ne placez
