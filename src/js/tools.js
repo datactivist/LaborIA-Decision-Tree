@@ -17,6 +17,7 @@ export const tools = [
     path: "tools/travail-reel-ia/index.html",
     status: "available",
   },
+  /*
   {
     id: "mon-metier-se-transforme",
     name: "Mon métier se transforme",
@@ -25,4 +26,5 @@ export const tools = [
     path: "tools/mon-metier-se-transforme/index.html",
     status: "available",
   },
+  */
 ];

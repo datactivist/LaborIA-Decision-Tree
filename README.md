@@ -1,8 +1,6 @@
-# Mon métier se transforme — LaborIA
+# LaborIA - Outils
 
-Outil interactif : arbre de décision pour évaluer l'impact de l'IA générative
-sur ses tâches quotidiennes, avec suivi des tâches (localStorage) et page
-d'exploration des pistes d'amélioration.
+Compilations d'outils développés pour le LaborIA.
 
 ## Installation
 
