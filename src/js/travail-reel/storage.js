@@ -1,7 +1,7 @@
-// Sauvegarde des résultats dans le localStorage (aucune donnée n'est envoyée)
+﻿// Sauvegarde des résultats dans le localStorage (aucune donnée n'est envoyée)
 // Structure :
 // {
-//   taches: [{ titre, sous: [{ nom, duree, outils, ia: 'oui'|'non'|'', iaComment, prompts }] }],
+//   taches: [{ titre, duree, outils, ia: 'oui'|'non'|'', iaComment, prompts }],
 //   etape3: [{ sansIA, gainTemps, confort, importantes }],   // une entrée par tâche
 //   etape4: string,
 //   updatedAt: string (ISO)
@@ -10,15 +10,27 @@ import { NB_TACHES } from './content.js';
 
 const STORAGE_KEY = 'laboria_travail_reel';
 
-export const newSousTache = () => ({ nom: '', duree: '', outils: '', ia: '', iaComment: '', prompts: '' });
+export const newTache = () => ({ titre: '', duree: '', outils: '', ia: '', iaComment: '', prompts: '' });
 
 function defaultState() {
   return {
-    taches: Array.from({ length: NB_TACHES }, () => ({ titre: '', sous: [newSousTache()] })),
+    taches: Array.from({ length: NB_TACHES }, newTache),
     etape3: Array.from({ length: NB_TACHES }, () => ({})),
     etape4: '',
     updatedAt: null,
   };
+}
+
+// Les anciennes sauvegardes contenaient des sous-tâches : on garde la première comme détail de la tâche
+function normalize(data) {
+  const state = { ...defaultState(), ...data };
+  state.taches = Array.from({ length: NB_TACHES }, (_, i) => {
+    const { sous, ...t } = state.taches[i] || {};
+    const first = sous?.[0] || {};
+    const { nom, ...detail } = first;
+    return { ...newTache(), ...detail, ...t, titre: t.titre || nom || '' };
+  });
+  return state;
 }
 
 export function getState() {
@@ -49,7 +61,7 @@ export function importData(json) {
   if (typeof data !== 'object' || data === null || !Array.isArray(data.taches) || !Array.isArray(data.etape3)) {
     throw new Error('Fichier invalide');
   }
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...defaultState(), ...data }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(normalize(data)));
 }
 
 export function resetData() {
